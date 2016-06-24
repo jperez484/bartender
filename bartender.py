@@ -16,6 +16,12 @@ ingredients = {
     "fruity": ["slice of melon", "dash of passion fruit", "crushed blueberries"],
 }
 
+drink_names ={
+    "adj": ["Funny", "Hot", "Electic", "Wet", "Blazing", "Curly"],
+    "noun": ["Flamingo", "WildFlower", "Panther", "Bison", "Bulldog"],
+    
+}
+
 
 #print(questions["strong"])
 
@@ -25,25 +31,29 @@ if a in {"Yes", "Y", "yes"}:
     #print(ingredients["strong"])
     print(random.choice(ingredients["strong"]))
     
-a = input(questions["strong"])
+b = input(questions["strong"])
 
-if a in {"Yes", "Y", "yes"}:
-    #print(ingredients["strong"])
-    print(random.choice(ingredients["strong"]))
+if b in {"Yes", "Y", "yes"}:
+    #print(ingredients["salty"])
+    print(random.choice(ingredients["salty"]))
     
-a = input(questions["strong"])
+c = input(questions["bitter"])
 
-if a in {"Yes", "Y", "yes"}:
-    #print(ingredients["strong"])
-    print(random.choice(ingredients["strong"]))
+if c in {"Yes", "Y", "yes"}:
+    #print(ingredients["bitter"])
+    print(random.choice(ingredients["bitter"]))
     
-a = input(questions["strong"])
+d = input(questions["sweet"])
 
-if a in {"Yes", "Y", "yes"}:
-    #print(ingredients["strong"])
-    print(random.choice(ingredients["strong"]))
+if d in {"Yes", "Y", "yes"}:
+    #print(ingredients["sweet"])
+    print(random.choice(ingredients["sweet"]))
     
 
+e = input(questions["fruity"])
 
+if e in {"Yes","Y", "yes"}:
+    #print(ingredients["fruity"])
+    print(random.choice(ingredients["fruity"]))
     
 
