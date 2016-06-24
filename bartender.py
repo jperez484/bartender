@@ -16,8 +16,34 @@ ingredients = {
     "fruity": ["slice of melon", "dash of passion fruit", "crushed blueberries"],
 }
 
-def preference():
 
-    print style
-    style=input("please enter your preference")
+#print(questions["strong"])
+
+a = input(questions["strong"])
+
+if a in {"Yes", "Y", "yes"}:
+    #print(ingredients["strong"])
+    print(random.choice(ingredients["strong"]))
+    
+a = input(questions["strong"])
+
+if a in {"Yes", "Y", "yes"}:
+    #print(ingredients["strong"])
+    print(random.choice(ingredients["strong"]))
+    
+a = input(questions["strong"])
+
+if a in {"Yes", "Y", "yes"}:
+    #print(ingredients["strong"])
+    print(random.choice(ingredients["strong"]))
+    
+a = input(questions["strong"])
+
+if a in {"Yes", "Y", "yes"}:
+    #print(ingredients["strong"])
+    print(random.choice(ingredients["strong"]))
+    
+
+
+    
 
