@@ -1,5 +1,7 @@
 import random
 
+questions_dictionary = {}
+
 questions = {
     "strong": "Ye like yer drinks strong eh?",
     "salty": "Ye like it with a salty tangy wangy?",
@@ -30,11 +32,17 @@ for thing in questions:
     #print(questions[thing])
     x =input(questions[thing])
     if x in {"Yes","Y", "yes", "y"}:
+        #dictionary (assign boolean value)
+        #see sample above
         x_choice = random.choice(ingredients[thing])
         ingredients_choices.append(x_choice)
+        questions_dictionary[thing] = True
+    else:
+        questions_dictionary[thing] = False
 
 if ingredients_choices ==[]:
     print("There's no drink here for Picky scallywags!")
 else:
     print("your drink is called the {}".format(drink_name))
     print("Made up of a: {}".format(", ".join(ingredients_choices)))
+    print(questions_dictionary)
