@@ -31,6 +31,7 @@ c_choice =''
 d_choice =''
 e_choice =''
 
+ingredients_choices = []
 
 a = input(questions["strong"])
 
@@ -39,6 +40,8 @@ if a in {"Yes","Y", "yes", "y"}:
     a_choice = random.choice(ingredients["strong"])
     #print(random.choice(ingredients["strong"]))
     #print(a_choice)
+    ingredients_choices.append(a_choice)
+    
 else:
     a_choice ="No"
     
@@ -49,6 +52,7 @@ if b in {"Yes","Y", "yes", "y"}:
     b_choice = random.choice(ingredients["salty"])
     #print(random.choice(ingredients["salty"]))
     #print(b_choice)
+    ingredients_choices.append(b_choice)
 else:
     b_choice ="No"
     
@@ -59,6 +63,7 @@ if c in {"Yes","Y", "yes", "y"}:
     c_choice = random.choice(ingredients["bitter"])
     #print(random.choice(ingredients["bitter"]))
     #print(c_choice)
+    ingredients_choices.append(c_choice)
 else:
     c_choice ="No"
     
@@ -69,6 +74,7 @@ if d in {"Yes","Y", "yes", "y"}:
     d_choice = random.choice(ingredients["sweet"])
     #print(random.choice(ingredients["sweet"]))
     #print(d_choice)
+    ingredients_choices.append(d_choice)
 else:
     d_choice ="No"
     
@@ -80,15 +86,14 @@ if e in {"Yes","Y", "yes", "y"}:
     e_choice = random.choice(ingredients["fruity"])
     #print(random.choice(ingredients["fruity"]))
     #print(e_choice)
+    ingredients_choices.append(e_choice)
 else:
     e_choice ="No"
     
-if a_choice == 'No':
-    if b_choice == 'No':
-        if c_choice == 'No':
-            if d_choice =='No':
-                if e_choice =='No':
-                    print("There's no drink here for Picky scallywags!")
+    
+
+if ingredients_choices ==[]:
+    print("There's no drink here for Picky scallywags!")
 else:
-                    print("your drink is called the {}".format(drink_name))
-                    print("Made up of a: {}, {}, {}, {}, {}".format(a_choice,b_choice,c_choice,d_choice,e_choice))
+    print("your drink is called the {}".format(drink_name))
+    print("Made up of a: {}".format(", ".join(ingredients_choices)))
