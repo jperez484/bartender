@@ -21,76 +21,17 @@ drink_fun ={
     "noun": ["Flamingo", "WildFlower", "Panther", "Bison", "Bulldog"],
     
 }
-dr = random.choice(drink_fun["adj"])
-na = random.choice(drink_fun["noun"])
 
-drink_name = dr+" "+na
-a_choice =''
-b_choice =''
-c_choice =''
-d_choice =''
-e_choice =''
+drink_name = random.choice(drink_fun["adj"])+" "+random.choice(drink_fun["noun"])
 
 ingredients_choices = []
 
-a = input(questions["strong"])
-
-if a in {"Yes","Y", "yes", "y"}:
-    #print(ingredients["strong"])
-    a_choice = random.choice(ingredients["strong"])
-    #print(random.choice(ingredients["strong"]))
-    #print(a_choice)
-    ingredients_choices.append(a_choice)
-    
-else:
-    a_choice ="No"
-    
-b = input(questions["salty"])
-
-if b in {"Yes","Y", "yes", "y"}:
-    #print(ingredients["salty"])
-    b_choice = random.choice(ingredients["salty"])
-    #print(random.choice(ingredients["salty"]))
-    #print(b_choice)
-    ingredients_choices.append(b_choice)
-else:
-    b_choice ="No"
-    
-c = input(questions["bitter"])
-
-if c in {"Yes","Y", "yes", "y"}:
-    #print(ingredients["bitter"])
-    c_choice = random.choice(ingredients["bitter"])
-    #print(random.choice(ingredients["bitter"]))
-    #print(c_choice)
-    ingredients_choices.append(c_choice)
-else:
-    c_choice ="No"
-    
-d = input(questions["sweet"])
-
-if d in {"Yes","Y", "yes", "y"}:
-    #print(ingredients["sweet"])
-    d_choice = random.choice(ingredients["sweet"])
-    #print(random.choice(ingredients["sweet"]))
-    #print(d_choice)
-    ingredients_choices.append(d_choice)
-else:
-    d_choice ="No"
-    
-
-e = input(questions["fruity"])
-
-if e in {"Yes","Y", "yes", "y"}:
-    #print(ingredients["fruity"])
-    e_choice = random.choice(ingredients["fruity"])
-    #print(random.choice(ingredients["fruity"]))
-    #print(e_choice)
-    ingredients_choices.append(e_choice)
-else:
-    e_choice ="No"
-    
-    
+for thing in questions: 
+    #print(questions[thing])
+    x =input(questions[thing])
+    if x in {"Yes","Y", "yes", "y"}:
+        x_choice = random.choice(ingredients[thing])
+        ingredients_choices.append(x_choice)
 
 if ingredients_choices ==[]:
     print("There's no drink here for Picky scallywags!")
