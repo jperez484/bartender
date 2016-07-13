@@ -1,7 +1,5 @@
 import random
 
-questions_dictionary = {}
-
 questions = {
     "strong": "Ye like yer drinks strong eh?",
     "salty": "Ye like it with a salty tangy wangy?",
@@ -18,31 +16,58 @@ ingredients = {
     "fruity": ["slice of melon", "dash of passion fruit", "crushed blueberries"],
 }
 
-drink_fun ={
+
+def questions_func():
+
+    questions_dictionary_new = {}
+
+    for thing in questions: 
+        #print(questions[thing])
+        x =input(questions[thing])
+        if x in {"Yes","Y", "yes", "y"}:
+            #dictionary (assign boolean value)
+            #see sample above
+            #x_choice = random.choice(ingredients[thing])
+            #ingredients_choices.append(x_choice)
+            questions_dictionary_new[thing] = True
+        else:
+            questions_dictionary_new[thing] = False
+            
+    return questions_dictionary_new 
+
+def drink_func(questions_dictionary_new):
+    
+    ingredients_choices = []
+    for type in questions_dictionary_new:
+        if  questions_dictionary_new[type] == True:
+            x_choice = random.choice(ingredients[type])
+            ingredients_choices.append(x_choice)
+    
+    return ingredients_choices
+
+def main():
+    
+    drink_fun ={
     "adj": ["Funny", "Hot", "Electic", "Wet", "Blazing", "Curly"],
     "noun": ["Flamingo", "WildFlower", "Panther", "Bison", "Bulldog"],
     
-}
+    }
 
-drink_name = random.choice(drink_fun["adj"])+" "+random.choice(drink_fun["noun"])
-
-ingredients_choices = []
-
-for thing in questions: 
-    #print(questions[thing])
-    x =input(questions[thing])
-    if x in {"Yes","Y", "yes", "y"}:
-        #dictionary (assign boolean value)
-        #see sample above
-        x_choice = random.choice(ingredients[thing])
-        ingredients_choices.append(x_choice)
-        questions_dictionary[thing] = True
+    drink_name = random.choice(drink_fun["adj"])+" "+random.choice(drink_fun["noun"])
+    
+    preferences = questions_func() 
+    drink_ingredients = drink_func(preferences)  
+    
+    if drink_ingredients ==[]:
+        print("There's no drink here for Picky scallywags!")
     else:
-        questions_dictionary[thing] = False
-
-if ingredients_choices ==[]:
-    print("There's no drink here for Picky scallywags!")
-else:
-    print("your drink is called the {}".format(drink_name))
-    print("Made up of a: {}".format(", ".join(ingredients_choices)))
-    print(questions_dictionary)
+        print("")
+        print("Your drink is called the {}".format(drink_name))
+        print("Made up of a {}".format(", ".join(drink_ingredients)))
+    
+if __name__ == '__main__':
+    main()
+    
+    #for next week
+    #drink func filled out so it actually works
+    #drink_name not be global as is
