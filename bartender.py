@@ -59,8 +59,11 @@ def main():
     drink_ingredients = drink_func(preferences)  
     
     if drink_ingredients ==[]:
+        print("")
+        print("")
         print("There's no drink here for Picky scallywags!")
     else:
+        print("")
         print("")
         print("Your drink is called the {}".format(drink_name))
         print("Made up of a {}".format(", ".join(drink_ingredients)))
